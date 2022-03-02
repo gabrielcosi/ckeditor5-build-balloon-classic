@@ -64,6 +64,9 @@
   },
   "author": "gabrielcosi",
   "license": "GPL-2.0-or-later",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "webpack --mode production",
     "preversion": "npm run build"
