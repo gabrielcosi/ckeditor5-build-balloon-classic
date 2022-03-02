@@ -119,10 +119,29 @@ const config = {
   // This value must be kept in sync with the language defined in webpack.config.js.
   language: "en",
 };
+
+const blockconfig = {
+  toolbar: {
+    items: ["bold", "italic", "link"],
+  },
+  language: "en",
+  blockToolbar: [],
+  image: {
+    toolbar: [
+      "imageTextAlternative",
+      "imageStyle:inline",
+      "imageStyle:block",
+      "imageStyle:side",
+    ],
+  },
+  table: {
+    contentToolbar: ["tableColumn", "tableRow", "mergeTableCells"],
+  },
+};
 // Editor configuration.
 BalloonEditor.defaultConfig = config;
 ClassicEditor.defaultConfig = config;
-BalloonBlockEditor.defaultConfig = config;
+BalloonBlockEditor.defaultConfig = blockconfig;
 
 export default {
   ClassicEditor,
