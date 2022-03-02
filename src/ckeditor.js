@@ -6,6 +6,7 @@
 // The editor creator to use.
 import BalloonEditorBase from "@ckeditor/ckeditor5-editor-balloon/src/ballooneditor";
 import ClassicEditorBase from "@ckeditor/ckeditor5-editor-classic/src/classiceditor";
+import BalloonBlockEditor from "@ckeditor/ckeditor5-editor-balloon/src/ballooneditor";
 
 import Essentials from "@ckeditor/ckeditor5-essentials/src/essentials";
 import UploadAdapter from "@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter";
@@ -36,6 +37,7 @@ import HtmlEmbed from "@ckeditor/ckeditor5-html-embed/src/htmlembed";
 
 class BalloonEditor extends BalloonEditorBase {}
 class ClassicEditor extends ClassicEditorBase {}
+class BalloonBlockEditor extends BalloonBlockEditor {}
 
 const plugins = [
   Essentials,
@@ -68,6 +70,7 @@ const plugins = [
 // Plugins to include in the build.
 ClassicEditor.builtinPlugins = plugins;
 BalloonEditor.builtinPlugins = plugins;
+BalloonBlockEditor.builtinPlugins = plugins;
 
 const config = {
   toolbar: {
@@ -119,8 +122,10 @@ const config = {
 // Editor configuration.
 BalloonEditor.defaultConfig = config;
 ClassicEditor.defaultConfig = config;
+BalloonBlockEditor.defaultConfig = config;
 
 export default {
   ClassicEditor,
   BalloonEditor,
+  BalloonBlockEditor,
 };
