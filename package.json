@@ -1,7 +1,7 @@
 {
-  "name": "ckeditor5-build-balloon",
-  "version": "25.0.0",
-  "description": "The balloon editor build of CKEditor 5 – the best browser-based rich text editor.",
+  "name": "@gabrielcosi/ckeditor5-custom-build",
+  "version": "1.0.0",
+  "description": "Custom ckeditor5 build to use classic and balloon at the same time.",
   "keywords": [
     "wysiwyg",
     "rich text",
@@ -62,15 +62,8 @@
     "node": ">=12.0.0",
     "npm": ">=5.7.1"
   },
-  "author": "CKSource (http://cksource.com/)",
+  "author": "gabrielcosi",
   "license": "GPL-2.0-or-later",
-  "homepage": "https://ckeditor.com/ckeditor-5",
-  "bugs": "https://github.com/ckeditor/ckeditor5/issues",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ckeditor/ckeditor5.git",
-    "directory": "packages/ckeditor5-build-balloon"
-  },
   "scripts": {
     "build": "webpack --mode production",
     "preversion": "npm run build"
