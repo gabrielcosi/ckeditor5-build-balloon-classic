@@ -6,9 +6,8 @@
 // The editor creator to use.
 import BalloonEditorBase from "@ckeditor/ckeditor5-editor-balloon/src/ballooneditor";
 import ClassicEditorBase from "@ckeditor/ckeditor5-editor-classic/src/classiceditor";
-import BalloonBlockEditor from "@ckeditor/ckeditor5-editor-balloon/src/ballooneditor";
+import BalloonBlockEditorBase from "@ckeditor/ckeditor5-editor-balloon/src/ballooneditor";
 
-import BalloonEditor from "@ckeditor/ckeditor5-editor-balloon/src/ballooneditor.js";
 import Autoformat from "@ckeditor/ckeditor5-autoformat/src/autoformat.js";
 import BlockQuote from "@ckeditor/ckeditor5-block-quote/src/blockquote.js";
 import Bold from "@ckeditor/ckeditor5-basic-styles/src/bold.js";
@@ -35,7 +34,7 @@ import TextTransformation from "@ckeditor/ckeditor5-typing/src/texttransformatio
 
 class BalloonEditor extends BalloonEditorBase {}
 class ClassicEditor extends ClassicEditorBase {}
-class BalloonBlockEditor extends BalloonBlockEditor {}
+class BalloonBlockEditor extends BalloonBlockEditorBase {}
 
 const plugins = [
   Autoformat,
