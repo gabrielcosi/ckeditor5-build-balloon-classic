@@ -6,44 +6,38 @@
 // The editor creator to use.
 import BalloonEditorBase from "@ckeditor/ckeditor5-editor-balloon/src/ballooneditor";
 import ClassicEditorBase from "@ckeditor/ckeditor5-editor-classic/src/classiceditor";
-import BalloonBlockEditorBase from "@ckeditor/ckeditor5-editor-balloon/src/ballooneditor";
 
-import Autoformat from "@ckeditor/ckeditor5-autoformat/src/autoformat.js";
-import BlockQuote from "@ckeditor/ckeditor5-block-quote/src/blockquote.js";
-import Bold from "@ckeditor/ckeditor5-basic-styles/src/bold.js";
-import Essentials from "@ckeditor/ckeditor5-essentials/src/essentials.js";
-import FontColor from "@ckeditor/ckeditor5-font/src/fontcolor.js";
-import FontFamily from "@ckeditor/ckeditor5-font/src/fontfamily.js";
-import FontSize from "@ckeditor/ckeditor5-font/src/fontsize.js";
-import Heading from "@ckeditor/ckeditor5-heading/src/heading.js";
-import Image from "@ckeditor/ckeditor5-image/src/image.js";
-import ImageCaption from "@ckeditor/ckeditor5-image/src/imagecaption.js";
-import ImageStyle from "@ckeditor/ckeditor5-image/src/imagestyle.js";
-import ImageToolbar from "@ckeditor/ckeditor5-image/src/imagetoolbar.js";
-import ImageUpload from "@ckeditor/ckeditor5-image/src/imageupload.js";
-import Indent from "@ckeditor/ckeditor5-indent/src/indent.js";
-import Italic from "@ckeditor/ckeditor5-basic-styles/src/italic.js";
-import Link from "@ckeditor/ckeditor5-link/src/link.js";
-import List from "@ckeditor/ckeditor5-list/src/list.js";
-import MediaEmbed from "@ckeditor/ckeditor5-media-embed/src/mediaembed.js";
-import Paragraph from "@ckeditor/ckeditor5-paragraph/src/paragraph.js";
-import PasteFromOffice from "@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice.js";
-import Table from "@ckeditor/ckeditor5-table/src/table.js";
-import TableToolbar from "@ckeditor/ckeditor5-table/src/tabletoolbar.js";
-import TextTransformation from "@ckeditor/ckeditor5-typing/src/texttransformation.js";
+import Essentials from "@ckeditor/ckeditor5-essentials/src/essentials";
+import Autoformat from "@ckeditor/ckeditor5-autoformat/src/autoformat";
+import Bold from "@ckeditor/ckeditor5-basic-styles/src/bold";
+import Italic from "@ckeditor/ckeditor5-basic-styles/src/italic";
+import BlockQuote from "@ckeditor/ckeditor5-block-quote/src/blockquote";
+import Heading from "@ckeditor/ckeditor5-heading/src/heading";
+import Image from "@ckeditor/ckeditor5-image/src/image";
+import ImageCaption from "@ckeditor/ckeditor5-image/src/imagecaption";
+import ImageStyle from "@ckeditor/ckeditor5-image/src/imagestyle";
+import ImageToolbar from "@ckeditor/ckeditor5-image/src/imagetoolbar";
+import Indent from "@ckeditor/ckeditor5-indent/src/indent";
+import Link from "@ckeditor/ckeditor5-link/src/link";
+import List from "@ckeditor/ckeditor5-list/src/list";
+import MediaEmbed from "@ckeditor/ckeditor5-media-embed/src/mediaembed";
+import Paragraph from "@ckeditor/ckeditor5-paragraph/src/paragraph";
+import PasteFromOffice from "@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice";
+import Table from "@ckeditor/ckeditor5-table/src/table";
+import TableToolbar from "@ckeditor/ckeditor5-table/src/tabletoolbar";
+import TextTransformation from "@ckeditor/ckeditor5-typing/src/texttransformation";
 
 class BalloonEditor extends BalloonEditorBase {}
 class ClassicEditor extends ClassicEditorBase {}
-class BalloonBlockEditor extends BalloonBlockEditorBase {}
 
 const plugins = [
   Autoformat,
   BlockQuote,
   Bold,
-  Essentials,
+  Essentials /* 
   FontColor,
   FontFamily,
-  FontSize,
+  FontSize, */,
   Heading,
   Image,
   ImageCaption,
@@ -64,15 +58,14 @@ const plugins = [
 // Plugins to include in the build.
 ClassicEditor.builtinPlugins = plugins;
 BalloonEditor.builtinPlugins = plugins;
-BalloonBlockEditor.builtinPlugins = plugins;
 
 const config = {
   toolbar: {
     items: [
-      "heading",
+      "heading" /* 
       "fontColor",
       "fontSize",
-      "fontFamily",
+      "fontFamily", */,
       "|",
       "bold",
       "italic",
@@ -112,31 +105,11 @@ const config = {
   language: "en",
 };
 
-const blockconfig = {
-  toolbar: {
-    items: ["bold", "italic", "link"],
-  },
-  language: "en",
-  blockToolbar: [],
-  image: {
-    toolbar: [
-      "imageTextAlternative",
-      "imageStyle:inline",
-      "imageStyle:block",
-      "imageStyle:side",
-    ],
-  },
-  table: {
-    contentToolbar: ["tableColumn", "tableRow", "mergeTableCells"],
-  },
-};
 // Editor configuration.
 BalloonEditor.defaultConfig = config;
 ClassicEditor.defaultConfig = config;
-BalloonBlockEditor.defaultConfig = blockconfig;
 
 export default {
   ClassicEditor,
   BalloonEditor,
-  BalloonBlockEditor,
 };

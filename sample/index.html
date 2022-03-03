@@ -47,17 +47,16 @@
 				href="https://ckeditor.com/docs/ckeditor5/latest/builds/guides/development/custom-builds.html">custom
 				build</a> works fine.</p>
 	</div>
-
 	<script src="../build/ckeditor.js"></script>
 	<script>
-		CKEDITOR.BalloonEditor.create(document.querySelector('#editor'))
+		CKEditor.BalloonEditor.create(document.querySelector('#editor'))
 			.then(editor => {
 				window.editor = editor;
 			})
 			.catch(error => {
 				console.error('There was a problem initializing the editor.', error);
 			});
-		CKEDITOR.ClassicEditor.create(document.querySelector('#editor2'))
+		CKEditor.ClassicEditor.create(document.querySelector('#editor2'))
 			.then(editor => {
 				window.editor = editor;
 			})
