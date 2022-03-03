@@ -1,6 +1,6 @@
 {
   "name": "@gabrielcosi/ckeditor5-custom-build",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Custom ckeditor5 build to use classic and balloon at the same time.",
   "main": "./build/ckeditor.js",
   "devDependencies": {
