@@ -1,6 +1,6 @@
 {
   "name": "@gabrielcosi/ckeditor5-custom-build",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Custom ckeditor5 build to use classic and balloon at the same time.",
   "main": "./build/ckeditor.js",
   "devDependencies": {
@@ -22,6 +22,7 @@
     "@ckeditor/ckeditor5-media-embed": "^32.0.0",
     "@ckeditor/ckeditor5-paragraph": "^32.0.0",
     "@ckeditor/ckeditor5-paste-from-office": "^32.0.0",
+    "@ckeditor/ckeditor5-source-editing": "^32.0.0",
     "@ckeditor/ckeditor5-table": "^32.0.0",
     "@ckeditor/ckeditor5-theme-lark": "^32.0.0",
     "@ckeditor/ckeditor5-typing": "^32.0.0",
@@ -39,7 +40,14 @@
   "publishConfig": {
     "access": "public"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gabrielcosi/ckeditor5-custom-build"
+  },
   "scripts": {
     "build": "webpack --mode production"
+  },
+  "dependencies": {
+    "@ckeditor/ckeditor5-editor-inline": "^32.0.0"
   }
 }

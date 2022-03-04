@@ -6,6 +6,7 @@
 // The editor creator to use.
 import BalloonEditorBase from "@ckeditor/ckeditor5-editor-balloon/src/ballooneditor";
 import ClassicEditorBase from "@ckeditor/ckeditor5-editor-classic/src/classiceditor";
+import InlineEditorBase from "@ckeditor/ckeditor5-editor-inline/src/inlineeditor";
 
 import Autoformat from "@ckeditor/ckeditor5-autoformat/src/autoformat.js";
 import BlockQuote from "@ckeditor/ckeditor5-block-quote/src/blockquote.js";
@@ -28,12 +29,14 @@ import List from "@ckeditor/ckeditor5-list/src/list.js";
 import MediaEmbed from "@ckeditor/ckeditor5-media-embed/src/mediaembed.js";
 import Paragraph from "@ckeditor/ckeditor5-paragraph/src/paragraph.js";
 import PasteFromOffice from "@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice.js";
+import SourceEditing from "@ckeditor/ckeditor5-source-editing/src/sourceediting";
 import Table from "@ckeditor/ckeditor5-table/src/table.js";
 import TableToolbar from "@ckeditor/ckeditor5-table/src/tabletoolbar.js";
 import TextTransformation from "@ckeditor/ckeditor5-typing/src/texttransformation.js";
 
 class BalloonEditor extends BalloonEditorBase {}
 class ClassicEditor extends ClassicEditorBase {}
+class InlineEditor extends InlineEditorBase {}
 
 const plugins = [
   Autoformat,
@@ -57,6 +60,7 @@ const plugins = [
   MediaEmbed,
   Paragraph,
   PasteFromOffice,
+  SourceEditing,
   Table,
   TableToolbar,
   TextTransformation,
@@ -64,6 +68,7 @@ const plugins = [
 // Plugins to include in the build.
 ClassicEditor.builtinPlugins = plugins;
 BalloonEditor.builtinPlugins = plugins;
+InlineEditor.builtinPlugins = plugins;
 
 const config = {
   toolbar: {
@@ -88,6 +93,8 @@ const config = {
       "mediaEmbed",
       "undo",
       "redo",
+      "|",
+      "sourceEditing",
     ],
   },
   image: {
@@ -124,8 +131,10 @@ const config = {
 // Editor configuration.
 BalloonEditor.defaultConfig = config;
 ClassicEditor.defaultConfig = config;
+InlineEditor.defaultConfig = config;
 
 export default {
   ClassicEditor,
   BalloonEditor,
+  InlineEditor,
 };
