@@ -14,6 +14,7 @@ import Essentials from "@ckeditor/ckeditor5-essentials/src/essentials.js";
 import FontColor from "@ckeditor/ckeditor5-font/src/fontcolor.js";
 import FontFamily from "@ckeditor/ckeditor5-font/src/fontfamily.js";
 import FontSize from "@ckeditor/ckeditor5-font/src/fontsize.js";
+import GeneralHtmlSupport from "@ckeditor/ckeditor5-html-support/src/generalhtmlsupport";
 import Heading from "@ckeditor/ckeditor5-heading/src/heading.js";
 import Image from "@ckeditor/ckeditor5-image/src/image.js";
 import ImageCaption from "@ckeditor/ckeditor5-image/src/imagecaption.js";
@@ -42,6 +43,7 @@ const plugins = [
   FontColor,
   FontFamily,
   FontSize,
+  GeneralHtmlSupport,
   Heading,
   Image,
   ImageCaption,
@@ -98,6 +100,16 @@ const config = {
   },
   table: {
     contentToolbar: ["tableColumn", "tableRow", "mergeTableCells"],
+  },
+  htmlSupport: {
+    allow: [
+      {
+        name: /.*/,
+        attributes: true,
+        classes: true,
+        styles: true,
+      },
+    ],
   },
   // codeBlock: {
   // 	languages: [
